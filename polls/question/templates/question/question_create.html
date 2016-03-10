@@ -1,0 +1,26 @@
+{% extends 'question/base.html' %}
+{% block title %}
+Новый вопрос
+{% endblock %}
+{% block content %}
+<form method="GET">
+    
+    <!-- <p><b>Номер запроса:</b></p>
+    <li><input type="integer" name="request_num" size="4" placeholder="id"></li> -->
+    <!-- <p><b>Тема:</b></p>
+    <li><input type="text" name="title" size="40" placeholder="Тема обращения"></li>
+    <p><b>Ваш вопрос:</b></p>
+    <li><textarea name="text" cols="40" rows="3" placeholder="Ваш вопрос"></textarea></li>
+    <p><b>Имя:</b></p>
+    <li><input type="text" name="full_name" placeholder="Имя"></li>
+    <p><b>Email:</b></p>
+    <li><input type="email" name="user_email" placeholder="Email"></li>
+    <p><b>Номер телефона:</b></p>
+    <li><input type="text" name="phone_number" placeholder="телефон"></li>
+    <p><b></b></p> -->
+    {{ form.as_p }}
+    <li><input href="question_list.html" type="submit" value="Отправить"></li>
+    
+</ul>
+</form>
+{% endblock %}

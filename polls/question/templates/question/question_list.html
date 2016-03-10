@@ -1,0 +1,24 @@
+{% extends 'question/base.html' %}
+{% block title %}
+Вопросы
+{% endblock %}
+{% block content %}
+	<h1>Вопросы и ответы:</h1>
+	<a href="question_create">Задать новый вопрос.</a>
+	{% for question in question %}
+		<p><a href="{% url 'question_detail' question.id %}">{{ question.title }}</a></p>
+		<p>{{ question.created_at|date:"M/d"|lower }}</p>
+		<p>{{ question.text }}</p>
+		<hr></hr>
+		{% if request.user.is_superuser %}
+			<a href={% url 'delete' question.id %}>&times;</a>
+			<a href={% url 'change_status' question.id 'published' %}>Опубликовать</a>
+			<a href={% url 'change_status' question.id 'decline' %}>Отклонить</a>
+			<a href={% url 'change_status' question.id 'new' %}>Новый</a>
+			<a href={% url 'change_status' question.id 'duplicate' %}>Дубликат</a>
+			
+		{% endif %}
+		<hr>
+	{% endfor %}
+	
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'question/base.html' %}
+{% block title %}
+Вопросы
+{% endblock %}
+{% block content %}
+		<h3>{{ question.title }}</h3>
+		<p>{{ question.created_at|date:"M/d"|lower }}</p>
+		<p>{{ question.text }}</p>
+		<hr></hr>
+		
+	
+	
+{% endblock %}
